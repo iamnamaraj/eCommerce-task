@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SiteController::class, 'index']);
+Route::get('/home', [SiteController::class, 'home'])
+    ->name('home')
+    ->middleware('auth');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home')->middleware('auth');
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.index')
+    ->middleware(['auth', 'admin']);
