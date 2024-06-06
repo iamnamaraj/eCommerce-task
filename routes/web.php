@@ -22,4 +22,4 @@ Route::get('/home', [SiteController::class, 'home'])
 
 Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin.index')
-    ->middleware(['auth', 'admin']);
+    ->middleware('admin');
