@@ -320,7 +320,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/select2/js/select2.js',
+                    'location' => 'vendor/select2/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',

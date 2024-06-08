@@ -61,7 +61,7 @@
             </tbody>
         </table>
     </div>
-    @if ($users->perPage() > $user->total)
+    @if ($users->perPage() < $users->total())
         <div class="card-footer">
             {{  $users->links() }}
         </div>

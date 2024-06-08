@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,5 @@ Route::get('/home', [SiteController::class, 'home'])
 Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('indix');
     Route::resource('users', UserController::class);
+    Route::resource('categories', CategoryController::class);
 });
