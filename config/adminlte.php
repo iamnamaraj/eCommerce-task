@@ -253,9 +253,9 @@ return [
             'icon' => 'fas fa-fw fa-layer-group nav-icon'
         ],
         [
-            'text' => 'Posts',
-            'url'  => 'admin/posts',
-            'icon' => 'fas fa-fw fa-file-alt nav-icon'
+            'text' => 'Products',
+            'url'  => 'admin/products',
+            'icon' => 'fas fa-fw fa-cubes nav-icon'
         ],
     ],
 
