@@ -18,7 +18,8 @@ use App\Http\Controllers\Admin\ProductController;
 |
 */
 
-Route::get('/', [SiteController::class, 'index']);
+Route::get('/', [SiteController::class, 'site'])->name('home.site');
+
 Route::get('/home', [SiteController::class, 'home'])
     ->name('home')
     ->middleware('auth');

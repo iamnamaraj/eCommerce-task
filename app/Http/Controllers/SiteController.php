@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Site\SiteRepositoryInterface;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Repositories\Site\SiteRepositoryInterface;
 
 class SiteController extends Controller
 {
@@ -27,6 +28,13 @@ class SiteController extends Controller
         if ($role == 'Admin') {
             return redirect('/admin');
         }
-        return redirect('/');
+        return redirect()->route('home.site');
+    }
+
+    public function site()
+    {
+        $products =  Product::with('attributeProducts.size', 'attributeProducts.color', 'attributeProducts.images')
+            ->latest()->paginate(7);
+        return view('site.userpage', compact('products'));
     }
 }
